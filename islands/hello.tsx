@@ -14,7 +14,7 @@ export default function Hello({ username, onChange }: Props) {
                 Welcome in Real-time Chat Application.
                 Please tell us your name:
             </p>
-            <form onSubmit={(event) => {event.preventDefault(); onChange(event.target.username.value);}}>
+            <form method="POST" onSubmit={(event) => {event.preventDefault(); onChange(event.target.username.value);}}>
                 <input type="text" name="username" value={ username }/>
                 <button type="submit">Log in</button>
             </form>

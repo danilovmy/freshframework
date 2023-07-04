@@ -11,18 +11,13 @@ export default function Home() {
     return (
         <Layout>
             {!username && !conduct && (
-                <div class="p-4 mx-auto max-w-screen-md">
-                    <Hello username={username} onChange={(newUsername) => {username = newUsername; return false}} />
-                </div>
+                <Hello username={username} onChange={(newUsername) => {username = newUsername; return false}} />
             )}
             {username && !conduct && (
-                <div className="p-4 mx-auto max-w-screen-md">
-                    <Сonduct username={username} conduct={conduct} />
-                </div>)}
+                <Сonduct username={username} conduct={conduct} />
+            )}
             {username && conduct && (
-                <div className="p-4 mx-auto max-w-screen-md">
-                    <Board username={username} conduct={conduct} />
-                </div>
+                <Board username={username} conduct={conduct} />
             )}
         </Layout>
     );

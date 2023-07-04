@@ -16,7 +16,7 @@ export default function Сonduit({ username, codeOfConduct, onChange }: Props) {
                     Chat Message.
                 </p>
             </div>
-            <form>
+            <form method="POST" >
                 <textarea name="message"></textarea>
                 <button type="submit">Send</button>
             </form>
