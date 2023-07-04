@@ -1,4 +1,3 @@
-import { Head } from "$fresh/runtime.ts";
 /** import { useSignal } from "@preact/signals"; */
 import Hello from "../islands/hello.tsx";
 import Сonduct from "../islands/conduct.tsx";
@@ -11,9 +10,6 @@ export default function Home() {
     let conduct = ''
     return (
         <Layout>
-            <Head>
-                <title>Real-time Chat Application</title>
-            </Head>
             {!username && !conduct && (
                 <div class="p-4 mx-auto max-w-screen-md">
                     <Hello username={username} onChange={(newUsername) => {username = newUsername; return false}} />
