@@ -2,27 +2,23 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/[name].tsx";
-import * as $1 from "./routes/api/joke.ts";
-import * as $2 from "./routes/index.tsx";
-import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/board.tsx";
-import * as $$2 from "./islands/conduct.tsx";
-import * as $$3 from "./islands/hello.tsx";
-import * as $$4 from "./islands/message.tsx";
+import * as $0 from "./routes/api/joke.ts";
+import * as $1 from "./routes/index.tsx";
+import * as $$0 from "./islands/board.tsx";
+import * as $$1 from "./islands/conduct.tsx";
+import * as $$2 from "./islands/hello.tsx";
+import * as $$3 from "./islands/message.tsx";
 
 const manifest = {
   routes: {
-    "./routes/[name].tsx": $0,
-    "./routes/api/joke.ts": $1,
-    "./routes/index.tsx": $2,
+    "./routes/api/joke.ts": $0,
+    "./routes/index.tsx": $1,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
-    "./islands/board.tsx": $$1,
-    "./islands/conduct.tsx": $$2,
-    "./islands/hello.tsx": $$3,
-    "./islands/message.tsx": $$4,
+    "./islands/board.tsx": $$0,
+    "./islands/conduct.tsx": $$1,
+    "./islands/hello.tsx": $$2,
+    "./islands/message.tsx": $$3,
   },
   baseUrl: import.meta.url,
 };

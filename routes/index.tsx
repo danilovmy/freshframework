@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <Layout>
             <Hello username={username} conduct={conduct} />
-            <Сonduct username={username} conduct={conduct} />
+            <Сonduct username={username} conduct={conduct}/>
             <Board username={username} conduct={conduct} />
         </Layout>
     );

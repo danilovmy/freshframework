@@ -1,13 +1,12 @@
 import Chat from "../components/chat.tsx";
-import Message from "./message.tsx";
 import { createRef, h } from 'preact';
+import Message from "../islands/message.tsx"
 import render from 'preact-render-to-string';
 
 function createCild(message) {
-    return h('p', {}, message);
+    return document.createRange().createContextualFragment(render(<Message message={message} />).trim()).firstElementChild
 }
 
-/** document.createElement(render(<Message message={message} />)) */
 
 function sendMessage(username, event, board) {
     event.preventDefault()
