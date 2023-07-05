@@ -1,12 +1,11 @@
 import Chat from "../components/chat.tsx";
 import { createRef, h } from 'preact';
-import Message from "../islands/message.tsx"
+import Message from "../components/message.tsx"
 import render from 'preact-render-to-string';
 
 function createCild(message) {
     return document.createRange().createContextualFragment(render(<Message message={message} />).trim()).firstElementChild
 }
-
 
 function sendMessage(username, event, board) {
     event.preventDefault()
@@ -14,7 +13,6 @@ function sendMessage(username, event, board) {
     board.current.appendChild(createCild(event.target.message.value))
     event.target.message.value = null
 }
-
 
 export default function Сonduit({ username, conduct }) {
     if (username.value && conduct.value) {
@@ -25,9 +23,7 @@ export default function Сonduit({ username, conduct }) {
                     You are here as {username.value}
                 </h2>
                 <div class="my-6" ref={board}>
-                    <p class="my-6" id="newMessage">
-                        Chat Message.
-                    </p>
+                    <Message message="Chat message" />
                 </div>
                 <Chat username={username.value} sendMessage={(event) => sendMessage(username, event, board)} />
             </div>
