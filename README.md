@@ -19,3 +19,6 @@ users can send messages to a shared text board without prior registration.
 ● A documentation about application https://github.com/danilovmy/freshframework/tree/main/docs
 ● Design decisions descriptions https://github.com/danilovmy/freshframework/tree/main/docs
 ● etc.
+
+# demo deployed on deno:
+● https://danilovmy.deno.dev/
