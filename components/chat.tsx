@@ -2,6 +2,7 @@ function submitOnShifterEnter(event) {
     if(event.key == 'Enter' && !event.shiftKey) {
         event.preventDefault()
         if (event.terget.form.message.value.trim()) {
+            event.target.form.message.value = event.target.form.message.value.trim()
             event.target.form.sendButton.click()
         }
     }
