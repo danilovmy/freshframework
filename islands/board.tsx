@@ -10,7 +10,7 @@ function createCild(message) {
 function sendMessage(username, event, board) {
     event.preventDefault()
     // TODO, Check if more than 10000 <p> in board - remove something.
-    board.current.appendChild(createCild(event.target.message.value))
+    board.current.appendChild(createCild(event.target.message.value.trim()))
     event.target.message.value = null
 }
 

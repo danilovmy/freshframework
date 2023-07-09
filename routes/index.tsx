@@ -10,9 +10,9 @@ export default function Home() {
     const conduct = useSignal(false);
     return (
         <Layout>
-            <Hello username={username} conduct={conduct} />
-            <Сonduct username={username} conduct={conduct}/>
-            <Board username={username} conduct={conduct} />
+            <Hello username={username} conduct={conduct} class="container"/>
+            <Сonduct username={username} conduct={conduct} class="container"/>
+            <Board username={username} conduct={conduct} class="container"/>
         </Layout>
     );
 }
