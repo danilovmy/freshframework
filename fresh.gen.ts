@@ -3,7 +3,8 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $0 from "./routes/api/messages.ts";
-import * as $1 from "./routes/index.tsx";
+import * as $1 from "./routes/api/users.ts";
+import * as $2 from "./routes/index.tsx";
 import * as $$0 from "./islands/board.tsx";
 import * as $$1 from "./islands/conduct.tsx";
 import * as $$2 from "./islands/hello.tsx";
@@ -11,7 +12,8 @@ import * as $$2 from "./islands/hello.tsx";
 const manifest = {
   routes: {
     "./routes/api/messages.ts": $0,
-    "./routes/index.tsx": $1,
+    "./routes/api/users.ts": $1,
+    "./routes/index.tsx": $2,
   },
   islands: {
     "./islands/board.tsx": $$0,
