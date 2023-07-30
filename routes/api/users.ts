@@ -1,12 +1,16 @@
 import { Handlers } from "$fresh/server.ts"
 import { randomNumber } from "https://deno.land/x/random_number/mod.ts"
 import Chat from 'store/models.tsx'
-import connection from 'store/mongodb.tsx'
+import { collections } from 'store/mongodb.tsx'
 
 const connectedClients = new Map()
 
+
 function broadcast(message, source) {
-    //const row = connection.chats.insertOne(new Chat(source.name, message, source.request, performance.now()))
+    const chat = new Chat({message:message, user:source.user, request:source.request});
+    console.log(chat)
+    const row = collections.collection('chats').insertOne(chat);
+    console.log(row);
     [...connectedClients.values()].forEach(socket => socket.send(JSON.stringify({message: message, username:source.user, id: source._id})))
 }
 
@@ -14,8 +18,7 @@ export const handler = (request, context) => {
     const querystring = (new URL(request.url)).searchParams
     const { socket, response } = Deno.upgradeWebSocket(request)
     socket.user = `${querystring.get("username")}`
-    socket.request = request
-
+    socket.request = JSON.stringify({'bodyUsed':request.bodyUsed, 'method': request.method, 'redirect': request.redirect, 'url': request.url, 'headers': Object.fromEntries([...request.headers])})
     socket._id = `${socket.user}__${performance.now()}__${randomNumber()}`
 
     if (connectedClients.has(socket._id)) {

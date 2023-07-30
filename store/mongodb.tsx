@@ -1,17 +1,18 @@
-import { MongoClient } from "mongo"
+import { MongoClient } from "mongo";
 
-const MONGODB_URL = 'mongodb://localhost:27017/'
-const database = 'salesy'
+const MONGODB_URL = 'mongodb://127.0.0.1:27017/';
+const database = 'salesy';
 
-async function create_connection (client) {
+async function connection() {
+    const client = new MongoClient();
     try {
-        // const database = client.database("TODO_APP");
-        await client.connect(`${MONGODB_URL}${database}`);
-    } catch {
-        console.error(`MONGODB connection error. Exiting.`)
-        Deno.exit(1)
-    }
-    return client
-}
+        await client.connect(MONGODB_URL);
+        return client.database(database);
+    } catch (error) {
+        console.error(error);
+        console.error(`MONGODB connection error. Exiting.`);
+        Deno.exit(1);
+    };
+};
 
-export default connection = create_connection(new MongoClient())
+export const collections = await connection();
