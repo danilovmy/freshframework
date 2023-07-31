@@ -6,7 +6,8 @@ import Message from "../components/message.tsx";
 import MessageLoader from "../components/messageloader.tsx";
 
 function url(host) {
-    return `ws://${host}/api/users`;
+    // TODO check secure protocol, not the localhost
+    return `${host.includes('localhost') ? 'ws' : 'wss'}://${host}/api/users`;
 }
 
 function createCild(data) {
