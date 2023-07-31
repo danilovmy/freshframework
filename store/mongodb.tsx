@@ -1,6 +1,6 @@
 import { MongoClient } from "mongo";
 
-const MONGODB_URL = 'mongodb://127.0.0.1:27017/';
+const MONGODB_URL = Deno.env.get("MONGODB_URL") || 'mongodb://127.0.0.1:27017/';
 const database = 'salesy';
 
 async function connection() {

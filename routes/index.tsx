@@ -5,14 +5,14 @@ import Board from "../islands/board.tsx";
 import Layout from "../components/layout.tsx";
 
 
-export default function Home() {
+export default function Home(props) {
     const username = useSignal('');
     const conduct = useSignal(false);
     return (
         <Layout>
             <Hello username={username} conduct={conduct} class="container"/>
             <Сonduct username={username} conduct={conduct} class="container"/>
-            <Board username={username} conduct={conduct} class="container"/>
+            <Board username={username} conduct={conduct} host={props.url.host} class="container"/>
         </Layout>
     );
 }

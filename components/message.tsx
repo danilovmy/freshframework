@@ -1,7 +1,7 @@
-export default function Message({user, message}) {
+export default function Message({message}) {
     return (
-    <p class="p-2 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="message">
-        <span class="font-medium">{user || 'Chat'}:</span> {message}
+    <p class="p-2 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" id={message.id} role="message">
+        <span class="font-medium">{message.username || 'Chat'}:</span> {message.message}
     </p>)
 }
 

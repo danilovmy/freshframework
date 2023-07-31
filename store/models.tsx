@@ -1,3 +1,5 @@
+import { collections } from 'store/mongodb.tsx'
+
 export default class Chat {
     created = null
     name = 'Chat'
@@ -12,6 +14,10 @@ export default class Chat {
         if (_id) {
              this._id = _id
         }
+    }
+
+    save() {
+        return collections.collection('chats').insertOne(this);
     }
 
 }
