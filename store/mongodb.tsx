@@ -11,7 +11,7 @@ async function connection() {
     } catch (error) {
         console.error(error);
         console.error(`MONGODB connection error. Exiting.`);
-        Deno.exit(1);
+        // Deno.exit(1);
     };
 };
 

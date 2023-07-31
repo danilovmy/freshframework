@@ -17,7 +17,11 @@ export default class Chat {
     }
 
     save() {
-        return collections.collection('chats').insertOne(this);
+        if (collections) {
+            return collections.collection('chats').insertOne(this);
+        } else {
+            console.log('not saved')
+        }
     }
 
 }
