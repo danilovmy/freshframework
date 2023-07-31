@@ -7,7 +7,7 @@ export default class Chat {
     request = null
 
     constructor({name, message, request, _id}) {
-        this.created = new Date(performance.timeOrigin + performance.now())
+        this.created = new Date().now()
         this.name = name || this.name
         this.message = message || this.message
         this.request = request || {}
