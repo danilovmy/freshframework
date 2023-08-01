@@ -1,6 +1,15 @@
-import { HandlerContext } from "$fresh/server.ts";
+import ChatModel from 'store/backendmodels.tsx'
 
-export const handler = (request, context) => {
-  const messages = []
-  return new Response(messages)
+export const handler = {
+    async GET(request, context) {
+        const querystring = (new URL(request.url)).searchParams
+        const chat = new ChatModel(Object.fromEntries(querystring.entries()))
+        let data = {}
+        try {
+            data = await chat.previous(querystring.limit)
+        } catch (error) {
+            console.log(error)
+        }
+        return new Response(JSON.stringify(data));
+    }
 }
