@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts"
-import { randomNumber } from "https://deno.land/x/random_number/mod.ts"
+import { randomNumber } from "https://deno.land/x/random_number@2.0.0/mod.ts"
 import ChatModel from 'store/backendmodels.tsx'
 
 const connectedClients = new Map()

@@ -1,6 +1,8 @@
 import { MongoClient } from "mongo";
+import { isDocker } from "https://deno.land/x/is_docker@v2.0.0/mod.ts";
 
-const MONGODB_URL = Deno.env.get("MONGODB_URL") || 'mongodb://127.0.0.1:27017/';
+const inDockerContainer = await isDocker(); // boolean
+const MONGODB_URL = Deno.env.get("MONGODB_URL") || `mongodb://${inDockerContainer ? 'host.docker.internal' : '127.0.0.1'}:27017/`;
 const database = 'salesy';
 
 

@@ -14,11 +14,24 @@ users can send messages to a shared text board without prior registration.
 
 
 # Links:
-● Link to Docker container with the application. [empty]
+● Link to application with the Dockerfile: https://github.com/danilovmy/freshframework/ 
+
 ● Source for the application hosted on a GitHub. https://github.com/danilovmy/freshframework/ 
 ● A documentation about application https://github.com/danilovmy/freshframework/tree/main/docs
 ● Design decisions descriptions https://github.com/danilovmy/freshframework/tree/main/docs
 ● etc.
 
+
 # demo deployed on deno:
 ● https://danilovmy.deno.dev/
+
+# How to start application:
+● Install Docker
+● Install MongoDb local. Service should be achievable per "mongodb://127.0.0.1:27017/"
+● Clone repository
+● Open CLI in cloned folder
+● Enter: "docker build -t fresh ."
+● After the end of install process enter:
+For windows: docker run -p 8000:8000 --volume %cd%:/app fresh
+For _nix: docker run -p 8000:8000 --volume $(pwd):/app fresh
+● Enjoy
