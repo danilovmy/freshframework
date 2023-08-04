@@ -27,7 +27,7 @@ users can send messages to a shared text board without prior registration.
 
 # How to start application:
 ● Install Docker
-● Install MongoDb local. Service should be achievable per "mongodb://127.0.0.1:27017/"
+● Install MongoDb local. Service should be achieviable for any per "mongodb://127.0.0.1:27017/" (no pasword no user)
 ● Clone repository
 ● Open CLI in cloned folder
 ● Enter: "docker build -t fresh ."

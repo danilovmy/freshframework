@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts"
-import { randomNumber } from "https://deno.land/x/random_number@2.0.0/mod.ts"
+import { randomNumber } from "random"
 import ChatModel from 'store/backendmodels.tsx'
 
 const connectedClients = new Map()
@@ -11,6 +11,7 @@ async function broadcast(message, name, request) {
 }
 
 export const handler = async (request, context) => {
+
     const querystring = (new URL(request.url)).searchParams
     const data = JSON.stringify({'bodyUsed':request.bodyUsed, 'method': request.method, 'redirect': request.redirect, 'url': request.url, 'headers': Object.fromEntries([...request.headers])})
     const { socket, response } = Deno.upgradeWebSocket(request)
