@@ -17,13 +17,15 @@ users can send messages to a shared text board without prior registration.
 ● Link to application with the Dockerfile: https://github.com/danilovmy/freshframework/ 
 
 ● Source for the application hosted on a GitHub. https://github.com/danilovmy/freshframework/ \
-● A documentation about application https://github.com/danilovmy/freshframework/tree/main/docs \
+● A documentation about application https://github.com/danilovmy/freshframework/tree/main/docs/description.md \
 ● Design decisions descriptions https://github.com/danilovmy/freshframework/tree/main/docs/architecture.md 
 
 
 
 # demo deployed on deno:
-● https://danilovmy.deno.dev/
+● https://danilovmy.deno.dev/ \
+Please, reload page, if you see on honeypot step the blank screeen. \
+This is restriction from deno.dev fee-less server. \
 
 # How to start application:
 ● Install Docker \
