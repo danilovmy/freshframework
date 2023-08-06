@@ -25,11 +25,12 @@
     "jsxImportSource": "preact"
   },
   "lint": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"],
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
     }
   }
 }
