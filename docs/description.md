@@ -8,19 +8,21 @@ The application is divided into three parts:
 Navigation on the top is not realized.
 
 ## Nickname.
-![start](./start.png)
-Any characters are allowed for a nickname. I don't like this solution.
-Here should be added validation.
-By default user has name Anonym.
+![start](./start.png)  \
+Any characters are allowed for a nickname. I don't like this solution.  \
+Here should be added validation.  \
+By default user has name Anonym.  \
 Many the same name are allowed.
 
 
 ## Honeypot.
-![protection](./honeypot.png)
-To go to chat should be "onClick" even generated.
+![protection](./honeypot.png) \
+To go to chat should be "onClick" even generated.  \
 This can help to protect agains not smart chat-bots.
 
 
 ## Chat application.
-![chat with messages](./chat.png)
-Any message allowed, any validation not exists, send by "ENTER"
+![chat with messages](./chat.png)  \
+Any message allowed,   \
+don't exists any validation,  \ 
+message will be sended by press "ENTER"
