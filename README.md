@@ -40,10 +40,11 @@ For _nix: docker run -p 8000:8000 --volume $(pwd):/app fresh \
 # Additional settings:
 By default chat use Mongodb connection to database placed local mongodb://127.0.0.1:27017/", no pasword, no user
 
-in **.env** file can be added:
+in **.env** file can be added: \
 `MONGODB_URL= your own database connection with pass and user in connection string`
 
-if you want to use _Atlas MongoDB Cloud_:
+if you want to use _Atlas MongoDB Cloud_: \
+
     MONGODB_TYPE=atlas
     MONGODB_USER=user
     MONGODB_PASSWORD=password
