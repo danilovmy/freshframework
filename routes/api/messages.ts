@@ -11,5 +11,5 @@ export const handler = {
             console.log(error);
         };
         return new Response(JSON.stringify(data));
-    };
+    }
 };

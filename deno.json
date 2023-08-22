@@ -1,36 +1,60 @@
 {
   "lock": false,
   "tasks": {
-    "start": "deno run -A --allow-net --cached-only --watch=static/,routes/,islands/,components/ dev.ts",
-    "update": "deno run -A -r https://fresh.deno.dev/update ."
+    "start": "deno run -A --allow-net --watch=static/,routes/,islands/,components/ dev.ts",
+    "update": "deno run -A -r https://fresh.deno.dev/update .",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts"
   },
   "imports": {
-    "mongo": "https://deno.land/x/mongo@v0.30.1/mod.ts",
-    "random": "https://deno.land/x/random_number@2.0.0/mod.ts",
-    "dev": "https://deno.land/x/fresh@1.3.1/dev.ts",
-    "$fresh/": "https://deno.land/x/fresh@1.3.1/",
-    "preact": "https://esm.sh/preact@10.15.1",
-    "preact/": "https://esm.sh/preact@10.15.1/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.0",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.2.3",
-    "twind": "https://esm.sh/twind@0.16.19",
-    "twind/": "https://esm.sh/twind@0.16.19/",
-    "$std/": "https://deno.land/std@0.190.0/",
+    "mongo": "https://deno.land/x/mongo/mod.ts",
+    "random": "https://deno.land/x/random_number/mod.ts",
+    "dev": "https://deno.land/x/fresh/dev.ts",
+    "$fresh/": "https://deno.land/x/fresh/",
+    "preact": "https://esm.sh/preact",
+    "preact/": "https://esm.sh/preact/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string",
+    "@preact/signals": "https://esm.sh/*@preact/signals",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core",
+    "@twind/": "https://esm.sh/@twind/",
+    "$std/": "https://deno.land/std/",
     "store/": "./store/",
-    "docker": "https://deno.land/x/is_docker@v2.0.0/mod.ts"
+    "docker": "https://deno.land/x/is_docker/mod.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
   "lint": {
-    "include": ["src/"],
-    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"],
+    "include": [
+      "src/"
+    ],
+    "exclude": [
+      "src/testdata/",
+      "data/fixtures/**/*.ts",
+      "_fresh"
+    ],
     "rules": {
-      "tags": ["fresh", "recommended"],
-      "include": ["ban-untagged-todo"],
-      "exclude": ["no-unused-vars"]
+      "tags": [
+        "fresh",
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
     }
+  },
+  "fmt": {
+    "useTabs": true,
+    "lineWidth": 80,
+    "indentWidth": 4,
+    "semiColons": true,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts", "_fresh"]
   }
 }
