@@ -17,8 +17,8 @@ function createCild(chat) {
 
 function sendMessage(socket, username, event, board) {
     event.preventDefault();
-    socket.send(JSON.stringify({message: event.target.message.value}));
-    event.target.message.value = null;
+    socket.send(JSON.stringify({message: event.target.form.message.value}));
+    event.target.form.message.value = null;
 };
 
 function appendMessage(response, board) {
@@ -29,11 +29,11 @@ function appendMessage(response, board) {
 async function appendPreviousMessage(event, board) {
     // TODO, Check if more than 10000 <p> in board - remove something.
     event.preventDefault();
-    event.target.loader.setAttribute('disabled', '');
+    event.target.form.loader.setAttribute('disabled', '');
     const messages = await (await (new ChatModel(board.current.firstElementChild.dataset)).reload()).json();
     messages.forEach(message => board.current.prepend(createCild(new ChatModel(message))));
     if (messages.length >= 10) {
-            event.target.loader.removeAttribute('disabled');
+            event.target.form.loader.removeAttribute('disabled');
         };
     };
 
@@ -49,7 +49,7 @@ export default function Board({ username, conduct, host }) {
                 </h2>
                 <MessageLoader loader={async event => await appendPreviousMessage(event, board)} />
                 <div class="my-6 border" ref={board}></div>
-                <Chat username={username.value} sendMessage={(event) => sendMessage(socket, username, event, board)} />
+                <Chat username={username.value} sendMessage={event => sendMessage(socket, username, event, board)} />
             </div>
         );
     };

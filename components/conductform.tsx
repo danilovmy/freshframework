@@ -5,8 +5,8 @@ function changeConduct(conduct, event) {
 
 export default function СonductForm({ conduct }) {
     return (
-        <form method="POST" onsubmit={(event) => changeConduct(conduct, event)}>
-            <button class="bg-grey-light border rounded p-4 shadow-md" type="submit">I am understand and accept it, let's go to chat</button>
+        <form>
+            <button class="bg-grey-light border rounded p-4 shadow-md" type="submit" onclick={event => changeConduct(conduct, event)}>I am understand and accept it, let's go to chat</button>
         </form>
     );
 };
