@@ -5,5 +5,5 @@ export default function messageLoader({loader}) {
                 load previous messages
             </button>
         </form>
-    )
-}
+    );
+};

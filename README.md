@@ -25,7 +25,7 @@ users can send messages to a shared text board without prior registration.
 # demo deployed on deno:
 ● https://danilovmy.deno.dev/ \
 Please, reload page, if you see on honeypot step the blank screeen. \
-This is restriction from deno.dev fee-less server. \
+This is restriction from deno.dev fee-less server.
 
 # How to start application:
 ● Install Docker \
@@ -60,5 +60,5 @@ if you want to use _Atlas MongoDB Cloud_: \
 - add docker-compose
 - add Tests
 - add css styles for chat
-- Write article abbout this use-case
+- Write article abbout this use-case on medium, dev.to and in russian segment.
 

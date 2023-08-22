@@ -27,7 +27,7 @@ async function connection() {
             });
         } else {
             await client.connect(MONGODB_URL);
-        }
+        };
         return client.database(database);
     } catch (error) {
         console.error(error);

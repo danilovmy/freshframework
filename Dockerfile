@@ -1,4 +1,4 @@
-FROM denoland/deno:1.36.0
+FROM denoland/deno:latest
 
 ARG GIT_REVISION
 ENV DENO_DEPLOYMENT_ID=${GIT_REVISION}
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 # load dependencies
-RUN deno cache main.ts --lock=deps.json --import-map=deno.json --lock-write dev.ts
+RUN deno cache dev.ts --lock=deps.json --import-map=deno.json --lock-write dev.ts
 
 #  share port
 

@@ -1,12 +1,12 @@
 function submitOnShifterEnter(event) {
     if(event.key == 'Enter' && !event.shiftKey) {
-        event.preventDefault()
+        event.preventDefault();
         if (event.target.form.message.value.trim()) {
-            event.target.form.message.value = event.target.form.message.value.trim()
-            event.target.form.sendButton.click()
-        }
-    }
-}
+            event.target.form.message.value = event.target.form.message.value.trim();
+            event.target.form.sendButton.click();
+        };
+    };
+};
 
 export default function Chat({ username, sendMessage }) {
     return (
@@ -15,4 +15,4 @@ export default function Chat({ username, sendMessage }) {
             <button type="submit" class="bg-grey-light border rounded p-4 shadow-md" name="sendButton" hidden>Send</button>
         </form>
     );
-}
+};

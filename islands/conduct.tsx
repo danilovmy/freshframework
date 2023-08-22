@@ -12,6 +12,6 @@ export default function Сonduct({ username, conduct }) {
                 </p>
                 <ConductForm conduct={conduct} />
             </div>
-        )
-    }
-}
+        );
+    };
+};

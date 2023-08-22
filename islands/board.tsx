@@ -4,38 +4,38 @@ import { createRef } from 'preact';
 import Chat from "../components/chat.tsx";
 import Message from "../components/message.tsx";
 import MessageLoader from "../components/messageloader.tsx";
-import ChatModel from 'store/frontendmodels.tsx'
+import ChatModel from 'store/frontendmodels.tsx';
 
 function url(host) {
     // TODO check secure protocol, not the localhost
     return `${host.includes('localhost') ? 'ws' : 'wss'}://${host}/api/users`;
-}
+};
 
 function createCild(chat) {
-    return document.createRange().createContextualFragment(render(<Message chat={chat} />).trim()).firstElementChild
-}
+    return document.createRange().createContextualFragment(render(<Message chat={chat} />).trim()).firstElementChild;
+};
 
 function sendMessage(socket, username, event, board) {
-    event.preventDefault()
-    socket.send(JSON.stringify({message: event.target.message.value}))
-    event.target.message.value = null
-}
+    event.preventDefault();
+    socket.send(JSON.stringify({message: event.target.message.value}));
+    event.target.message.value = null;
+};
 
 function appendMessage(response, board) {
     // TODO, Check if more than 10000 <p> in board - remove something.
-    board.current.append(createCild(ChatModel.parse(response)))
-}
+    board.current.append(createCild(ChatModel.parse(response)));
+};
 
 async function appendPreviousMessage(event, board) {
     // TODO, Check if more than 10000 <p> in board - remove something.
-    event.preventDefault()
+    event.preventDefault();
     event.target.loader.setAttribute('disabled', '');
     const messages = await (await (new ChatModel(board.current.firstElementChild.dataset)).reload()).json();
-    messages.forEach(message => {
-        board.current.prepend(createCild(new ChatModel(message)));
-    } )
-    if (messages.length >= 10) {event.target.loader.removeAttribute('disabled')};
-};
+    messages.forEach(message => board.current.prepend(createCild(new ChatModel(message))));
+    if (messages.length >= 10) {
+            event.target.loader.removeAttribute('disabled');
+        };
+    };
 
 export default function Board({ username, conduct, host }) {
     if (username.value && conduct.value) {
@@ -52,5 +52,5 @@ export default function Board({ username, conduct, host }) {
                 <Chat username={username.value} sendMessage={(event) => sendMessage(socket, username, event, board)} />
             </div>
         );
-    }
-}
+    };
+};

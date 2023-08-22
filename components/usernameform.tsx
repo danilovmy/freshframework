@@ -1,7 +1,7 @@
 function changeUsername(username, event) {
-    event.preventDefault()
-    username.value = event.target.username.value
-}
+    event.preventDefault();
+    username.value = event.target.username.value;
+};
 
 export default function UsernameForm({username}) {
     return (
@@ -10,4 +10,4 @@ export default function UsernameForm({username}) {
             <button type="submit" class="bg-grey-light border rounded p-4 shadow-md">Log in</button>
         </form>
     );
-}
+};
