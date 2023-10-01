@@ -1,13 +1,14 @@
-import { useSignal } from "@preact/signals";
+import { signal, useSignal } from "@preact/signals";
 import Hello from "../islands/hello.tsx";
 import Сonduct from "../islands/conduct.tsx";
 import Board from "../islands/board.tsx";
 import Layout from "../components/layout.tsx";
+import { Handlers } from "$fresh/server.ts";
 
+const username = signal('');
+const conduct = signal(false);
 
 export default function Home(props) {
-    const username = useSignal('');
-    const conduct = useSignal(false);
     return (
         <Layout>
             <Hello username={username} conduct={conduct} class="container"/>

@@ -1,7 +1,7 @@
-export default function messageLoader({loader}) {
+export default function messageLoader({onSubmit}) {
     return (
-        <form>
-            <button type="submit" name="loader" onclick={loader} class="bg-grey-light border rounded p-4 shadow-md">
+        <form onSubmit={onSubmit}>
+            <button type="submit" name="loader" class="bg-grey-light border rounded p-4 shadow-md">
                 load previous messages
             </button>
         </form>

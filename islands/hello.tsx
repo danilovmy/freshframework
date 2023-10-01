@@ -1,5 +1,12 @@
 import UsernameForm from "../components/usernameform.tsx";
 
+function changeUsername(event, username) {
+    console.log(username)
+    event.preventDefault();
+    username.value = event.target.username.value;
+};
+
+
 export default function Hello({username, conduct}) {
     if (!username.value && !conduct.value) {
         return (
@@ -9,7 +16,7 @@ export default function Hello({username, conduct}) {
                     Welcome in Real-time Chat Application.
                     Please tell us your name:
                 </p>
-                <UsernameForm username={username} />
+                <UsernameForm username={username} onSubmit={event => changeUsername(event, username)} />
             </div>
         );
     };

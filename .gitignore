@@ -130,3 +130,5 @@ dist
 .pnp.*
 .vscode
 grape-chat-main/
+# Fresh build directory
+_fresh/

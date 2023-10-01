@@ -1,5 +1,10 @@
 import ConductForm from "../components/conductform.tsx";
 
+function changeConduct(event, conduct) {
+    event.preventDefault()
+    conduct.value = true
+}
+
 export default function Сonduct({ username, conduct }) {
     if (username.value && !conduct.value) {
         return (
@@ -10,7 +15,7 @@ export default function Сonduct({ username, conduct }) {
                 <p class="my-6">
                     To start chat, please accept our code of conduct.
                 </p>
-                <ConductForm conduct={conduct} />
+                <ConductForm conduct={conduct} onSubmit={event => changeConduct(event, conduct)} />
             </div>
         );
     };
